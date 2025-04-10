@@ -1,0 +1,70 @@
+.hero-section {
+  display: flex;
+  flex-direction: column; /* Stack logo and tagline vertically */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  height: calc(100vh - 80px); /* Full screen height minus navbar height */
+  background-color: #292929; /* Match the landing page background color */
+  position: relative; /* Allow independent child positioning */
+}
+
+.logo-container {
+  display: block;
+  position: relative;
+  top: -70px;
+  animation: fadeInSlideDown 1.5s ease-out forwards;
+  opacity: 0;
+}
+
+.tagline-container {
+  position: relative; /* Enable positioning without affecting siblings */
+  top: -285px; /* Move tagline upwards without affecting the logo */
+}
+
+.tagline {
+  font-size: 40px; /* Adjust text size */
+  text-align: center; /* Center align the text */
+  font-weight: 500;
+  color: #b9b8b8;
+}
+
+.button-container {
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically if needed */
+  position: relative;
+  top: -271px; /* Move button upwards (adjust value as needed) */
+  z-index: 10;
+}
+
+.start-analyzing-button {
+  background-color: #d1cece;
+  color: #292929; /* Dark text color */
+  font-size: 18px; /* Larger text for button */
+  font-weight: 600; /* Semi-bold text */
+  font-family: "League Spartan", "sans-serif";
+  padding: 10px 10px 10px 10px;
+  padding-left: 18.5px;
+  padding-right: 19px;
+  border: none; /* Remove default button border */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+  text-align: center;
+  align-items: center;
+}
+.start-analyzing-button::after {
+  position: relative;
+  top: 0px; /* Moves the arrow slightly upwards*/
+}
+
+@keyframes fadeInSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px); /* Start slightly above */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* End at the original position */
+  }
+}

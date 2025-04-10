@@ -1,0 +1,42 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "League Spartan", sans-serif; /* Change to your preferred font */
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 4px; /* Set width for vertical scrollbar */
+  height: 12px; /* Set height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #333; /* Dark background for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6d6c6c; /* Black color for the scrollbar thumb */
+  border-radius: 6px; /* Optional: rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Lighter black when hovering over the thumb */
+}
+
+.submit-button:hover,
+.start-analyzing-button:hover,
+.chatgpt-button:hover {
+  background-color: #a5a3a3;
+}
+
+.submit-button::after,
+.start-analyzing-button:after,
+.chatgpt-button:after {
+  content: "→"; /* Unicode character for a right arrow */
+  margin-left: 5px; /* Space between the button text and the arrow */
+  font-size: 18px; /* Adjust size of the arrow */
+  position: relative;
+  top: -1.25px; /* Moves the arrow slightly upwards */
+}

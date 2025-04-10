@@ -1,0 +1,294 @@
+.results-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  background-color: #292929; /* Dark background for contrast */
+  color: #ffffff;
+  min-height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+}
+
+.header {
+  text-align: center;
+  font-family: "League Spartan", sans-serif;
+  font-size: larger;
+  color: #b9b8b8;
+}
+
+.h-1 {
+  margin-top: -5px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  animation: fadeInSlideDown 1.5s ease-out forwards;
+  color: #b9b8b8;
+}
+
+.tweets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+  margin-bottom: 20px; /* Add spacing at the bottom */
+}
+
+.profile-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 800px;
+}
+
+.tweet-card {
+  border: 1px dotted;
+  border-color: dimgray;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #393939;
+  font-family: "League Spartan", sans-serif;
+  color: #b9b8b8;
+}
+
+.profile-details {
+  border-color: dimgray;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #393939;
+  word-wrap: break-word; /* Ensure long tweets don't overflow */
+  font-family: "League Spartan", sans-serif;
+  color: #b9b8b8;
+}
+
+.tweet-card p,
+.profile-details p {
+  margin: 5px 0;
+  word-wrap: break-word; /* Break long words or URLs */
+  overflow-wrap: anywhere; /* Allow breaking at any character for long strings */
+  white-space: normal;
+}
+
+.bold-elements,
+.user {
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.error-message {
+  color: rgb(245, 70, 70);
+  font-weight: 300;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "League Spartan", sans-serif;
+}
+
+.info-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #b0adad;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  line-height: 16px;
+  cursor: pointer;
+  vertical-align: middle; /* Ensures alignment with text */
+}
+
+.tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: #393939;
+  border: rgb(98, 95, 95) solid;
+  color: #fff;
+  text-align: left;
+  padding: 8px;
+  border-radius: 4px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%; /* Adjust as needed to position above or below the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-size: 14px;
+  font-weight: 200;
+  font-family: "League Spartan", sans-serif;
+}
+
+.info-icon:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.username {
+  font-family: "League Spartan", sans-serif;
+  color: #b9b8b8;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.bio-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px dotted;
+  border-color: dimgray;
+  background-color: #393939;
+  font-family: "League Spartan", sans-serif;
+  color: #b9b8b8;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 0px 7.5px 0px 7.5px;
+  text-align: center;
+}
+
+.confidence-bar-container {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.confidence-bar {
+  width: 25px;
+  height: 8px;
+  border-radius: 5px;
+  margin-right: 8px;
+  margin-left: 7.5px;
+  margin-bottom: 2px;
+}
+
+.confidence-level {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.green {
+  background-color: #28a745;
+}
+
+.amber {
+  background-color: #ffbf00;
+}
+
+.red {
+  background-color: #dc3545;
+}
+
+.chatgpt-button-container,
+.load-more-container {
+  bottom: 10vh; /* Position the button 10vh from the bottom */
+  display: flex;
+  justify-content: center;
+}
+
+.chatgpt-button,
+.load-more-button {
+  background-color: #d1cece; /* A professional blue */
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "League Spartan", "Sans-Serif";
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  margin-top: 20px;
+}
+
+.chatgpt-button::after,
+.load-more-button::after {
+  content: "→"; /* Unicode character for right arrow */
+  margin-left: 5px; /* Space between the button text and the arrow */
+  font-size: 18px; /* Adjust size of the arrow */
+  top: 0px; /* Moves the arrow slightly upwards */
+}
+
+.chatgpt-button.no-arrow::after,
+.load-more-button.no-arrow::after {
+  content: ""; /* Remove the arrow when the no-arrow class is applied */
+}
+
+.chatgpt-button::after,
+.load-more-button::after {
+  content: "→"; /* Unicode character for right arrow */
+  margin-left: 5px; /* Space between the button text and the arrow */
+  font-size: 18px; /* Adjust size of the arrow */
+  top: 0px; /* Moves the arrow slightly upwards */
+}
+
+/* ChatGPT Response Styling */
+.chatgpt-response {
+  background-color: #393939; /* Light background to distinguish the section */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px dotted;
+  padding-right: 40px;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 20px; /* Space above the response */
+  margin-left: 80px;
+  margin-right: 80px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a card-like effect */
+  font-family: "League Spartan", sans-serif; /* Set a clean, modern font */
+}
+
+.chatgpt-response h3 {
+  font-size: 24px; /* Larger size for the header */
+  color: #fff; /* Dark color for better contrast */
+  font-weight: 600; /* Slightly bold for emphasis */
+  margin-bottom: 15px; /* Space below the header */
+  text-align: center;
+}
+
+.chatgpt-response p {
+  font-size: 16px; /* A bit larger than normal text for readability */
+  color: #b9b8b8; /* A softer color than the header */
+  line-height: 1.25; /* Increase line height for better readability */
+  word-wrap: break-word; /* Handle long words or URLs gracefully */
+  text-align: justify;
+}
+
+.analysis-disclaimer {
+  font-size: 16px; /* A bit larger than normal text for readability */
+  color: #b9b8b8; /* A softer color than the header */
+  line-height: 1;
+  font-family: "League Spartan", sans-serif; /* Set a clean, modern font */
+  font-weight: 300;
+  text-align: center;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-details h3 {
+  margin: 0;
+  font-size: 18px;
+  font-family: "League Spartan", "san-serif";
+}
+
+.loading-message {
+  font-family: "League Spartan", sans-serif;
+  color: #fff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.h-3 {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  color: #b9b8b8;
+  margin-top: 60px;
+}
