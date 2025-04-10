@@ -1,4 +1,5 @@
 # Sentanal: An AI-Powered Tool for Identifying Signs of Depression in User Tweets
+_Sentanal_ is an X/Twitter sentiment analysis tool that detects signs of depression in text-based user tweets by leveraging pre-trained models from **Hugging Face** and **OpenAI's ChatGPT** LLM to classify levels of depression in user tweets and assist in enabling early intervention.
 
 ## Models and References
 
